@@ -1,15 +1,28 @@
 import React, {Component} from 'react';
 import './App.css';
-import CustomizingPage from './components/CustomizingPage'
+import CustomizingPage from './components/CustomizingPage';
+import { BrowserRouter as Router, Switch,Route, Link} from "react-router-dom";
+import LandingPage from './components/LandingPage';
 
 class App extends Component {
 
   render () {
     return (
-      <div>
-        <h1>Advent Calendar</h1>
-        <CustomizingPage />
-      </div>
+      <Router>
+        <div>
+          <Switch>
+            <Route
+            exact path="/"
+            component={LandingPage}
+            />
+            <Route
+            path="/calendar"
+            component={CustomizingPage}
+            />
+          </Switch>
+        </div>
+      </Router>
+
     );
   }
 }

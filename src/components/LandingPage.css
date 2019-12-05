@@ -1,0 +1,17 @@
+.landingPage {
+    background-image: url('https://images5.alphacoders.com/666/thumb-1920-666586.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    height: 45px;
+}

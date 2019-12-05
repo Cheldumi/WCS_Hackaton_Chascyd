@@ -6,9 +6,15 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "express": "^4.17.1",
+    "muicss": "^0.10.0",
+    "mysql": "^2.17.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "react-native-elements": "^1.2.7",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.3.0",
+    "react-snow-effect": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,5 +36,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cheldumi/WCS_Hackaton_Chascyd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cheldumi/WCS_Hackaton_Chascyd/issues"
+  },
+  "homepage": "https://github.com/Cheldumi/WCS_Hackaton_Chascyd#readme"
 }
