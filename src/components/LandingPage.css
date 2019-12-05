@@ -10,8 +10,45 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.bloc-hp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landingPage h1 {
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family: inherit;
+    text-align: center;
+    vertical-align: middle;
+    line-height: normal;
+    text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+}
+
+.landingPage p {
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-family: inherit;
+    text-align: center;
+    vertical-align: middle;
+    line-height: normal;
+    text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
 }
 
 .button {
     height: 45px;
+    font-size: 18px;
+}
+
+.button:hover {
+    box-shadow: 0 0 60px 30px #fff;
 }

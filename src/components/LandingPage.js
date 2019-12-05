@@ -13,10 +13,14 @@ class LandingPage extends Component {
     render() { 
         return ( 
         <div className="landingPage">
+            <div className="bloc-hp">
             <Snow />
+            <h1>Advent Calendar</h1>
+            <p>Millions of calendar. No credit card required.</p>
             <Link to="/calendar">
-            <Button className='button'>Create my advent calendar</Button>
+            <Button className='button'>I create</Button>
             </Link>
+            </div>
         </div> 
         );
     }

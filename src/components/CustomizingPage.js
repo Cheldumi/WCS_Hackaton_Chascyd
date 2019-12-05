@@ -5,6 +5,9 @@ import ImportMedia from './ImportMedia';
 import './LandingPage.css';
 import './CustomizingPage.css';
 import Snow from 'react-snow-effect';
+import CalendarsList from './CalendarsList';
+import CalendarForm from './CalendarForm';
+
 
 class CustomizingPage extends Component {
 
@@ -17,6 +20,8 @@ class CustomizingPage extends Component {
             </div>
           <div className='fill-calendar'>
             <FillCalendar />
+            <CalendarsList />
+            <CalendarForm />
           </div>
           <div className='previsualisation'>
             <Previsualisation />
