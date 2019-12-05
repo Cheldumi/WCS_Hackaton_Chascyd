@@ -26,12 +26,24 @@ class FillCalendar extends Component {
 
   checkDate = (today, comparedDate) => {
     const options = {  day: 'numeric' };
-    const todayDayInTheMonth = today.toLocaleDateString('fr-FR', options);
+    const today2 = today.toLocaleDateString('fr-FR', options);
 
-    if(todayDayInTheMonth <= comparedDate - 1) {
-      return true;
+    if(today2 <= comparedDate - 1) {
+      return false;
     } else {
-      return false
+      return true
+    }
+  }
+
+  isClicked = (index) => {
+    console.log("I am clicked")
+    if(this.state.case[index].canBeOpened && !this.state.case[index].isOpen) {
+      let newCase = this.state.case;
+      console.log("Je suis newCase", newCase)
+      newCase[index].isOpen = true;
+      this.setState({
+        case: newCase
+      });
     }
   }
 
@@ -46,9 +58,9 @@ class FillCalendar extends Component {
       <div className="fillCalendarDiv">
         <h1>Fill Calendar</h1>
         <div className="allBoxes">
-          {this.state.case.map((x) => { 
+          {this.state.case.map((contenu, index) => { 
             return (
-              <DateBox case={x}/>
+              <DateBox handleClick={this.isClicked} case={contenu} index={index}/>
             )
           })}
         </div>

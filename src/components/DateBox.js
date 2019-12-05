@@ -1,20 +1,28 @@
 import React from 'react';
 import './DateBox.css';
 
+// const whichDate = () => {
+//     // alert("This box is locked, please be patient")
+//     console.log("Locked box")
+// }
 
-let myDate = new Date;
-let settings = { /*weekday: 'long',*/ day: 'numeric' };
-let todaysDate = myDate.toLocaleDateString('fr-BE', settings);
-console.log(todaysDate);
+// const Openable = () => {
+//     console.log("Closed Box")
+// }
 
-const openBox = () => {
-    // alert("This box is locked, please be patient")
-    console.log("locked box")
-}
+//{props.case.canBeOpened ? (event) => whichDate(event, props.date) : () => console.log("Openable box")}
+
+
 
 const DateBox = (props) => {
+
+    console.log(props.case)
+
    return (
-    <div className={props.case.canBeOpened && !props.case.isOpen ? "locked" : "openable"} onClick={props.case.canBeOpened ? (event) => openBox(event, props.date) : () => console.log("Openable box")}>
+    <div
+        className= {`${props.case.isOpen ? "opened" : ""} ${props.case.canBeOpened && !props.case.isOpen ? "openable" : "locked"}`} 
+
+        onClick={() => props.handleClick(props.index)}>
         <img src={props.case.data} alt="uploaded data"/>
         <p>{props.case.date}</p>
         {props.case.isOpen}

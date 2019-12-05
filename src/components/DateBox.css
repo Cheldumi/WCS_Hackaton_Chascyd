@@ -9,3 +9,7 @@
     border: solid black 1px;
     background-color: green;
 }
+
+.opened{
+    background-color: blue;
+}
