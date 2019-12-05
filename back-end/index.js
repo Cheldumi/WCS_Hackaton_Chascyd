@@ -1,15 +1,39 @@
-const connection = require('./config');
+//const connection = require('./config');
 
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
+const upload = require('./upload')
 const express = require('express');
 const app = express();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
+const cors = require('cors');
+
+const corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200,
+}
+
+app.use(cors(corsOptions));
+
+app.listen(port, (err) => {
+  if (err) {
+    throw new Error('Something bad happened...');
+  }
+
+  console.log(`Server is listening on ${port}`);
+});
+
+app.post('/upload', upload);
+
+
+/*
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+
 
 app.listen(port, (err) => {
   if (err) {
@@ -20,6 +44,7 @@ app.listen(port, (err) => {
 });
 
 app.get('/api/movies', (req, res) => {
+    console.log('On est dans GET');
   connection.query('SELECT * FROM movie', (err, results) => {
     if (err) {
       res.status(500).send('Erreur lors de la récupération des films');
@@ -40,3 +65,4 @@ app.post('/api/movies', (req, res) => {
     }
   });
 });
+*/
