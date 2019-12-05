@@ -1,0 +1,11 @@
+.fillCalendarDiv{
+    border: solid black 1px;
+    text-align: center;
+}
+
+.allBoxes{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

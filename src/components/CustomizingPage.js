@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import FillCalendar from './FillCalendar';
+import FillCalendar from './FillCalendar.js';
 import Previsualisation from './Previsualisation';
 import ImportMedia from './ImportMedia';
 import './LandingPage.css';
