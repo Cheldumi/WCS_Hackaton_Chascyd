@@ -16,16 +16,29 @@ class FillCalendar extends Component {
       boxes[i] = {
         date: this.renderDate(date),
         isOpen: false,
-        data: "https://cdn.iconscout.com/icon/premium/png-256-thumb/christmas-tree-1728338-1469705.png"
+        data: ""/*"https://cdn.iconscout.com/icon/premium/png-256-thumb/christmas-tree-1728338-1469705.png"*/,
+        canBeOpened: this.checkDate(new Date, i)
       }
     }
+    // console.log(boxes)
     return boxes
+  }
+
+  checkDate = (today, comparedDate) => {
+    const options = {  day: 'numeric' };
+    const todayDayInTheMonth = today.toLocaleDateString('fr-FR', options);
+
+    if(todayDayInTheMonth <= comparedDate - 1) {
+      return true;
+    } else {
+      return false
+    }
   }
 
   renderDate = (date) => {
     let settings = { weekday: 'long', day: 'numeric' };
     let dateFormat = date.toLocaleDateString('fr-BE', settings)
-    return dateFormat
+    return dateFormat;
   }
 
   render () {

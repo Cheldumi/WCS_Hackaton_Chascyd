@@ -1,3 +1,11 @@
-.oneBox{
+.locked{
     border: solid black 1px;
+    margin: 1vh;
+    background-color: red;
+}
+
+.openable{
+    margin: 1vh;
+    border: solid black 1px;
+    background-color: green;
 }
