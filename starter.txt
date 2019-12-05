@@ -6,5 +6,7 @@ back-end:
 
 front-end:
 - npm install --save
+- npm install --save muicss
+- npm install react-snow-effect --save
 
 
