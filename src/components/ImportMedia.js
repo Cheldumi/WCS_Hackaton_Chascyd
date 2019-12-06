@@ -128,7 +128,7 @@ class ImportMedia extends Component {
   render() {
     return (
       <div>
-        <h1>1 - Download your media</h1>
+        <h1>1 - Upload your media</h1>
         <div className="Card">
           <div className="Upload">
             <div className="Content">
