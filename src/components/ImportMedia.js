@@ -131,7 +131,6 @@ class ImportMedia extends Component {
         <h1>1 - Download your media</h1>
         <div className="Card">
           <div className="Upload">
-            <span className="Title">Upload Files</span>
             <div className="Content">
               <div>
                 <DropZone

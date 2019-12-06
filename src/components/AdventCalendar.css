@@ -1,0 +1,8 @@
+.advent-calendar {
+    width: 45%;
+    padding: 10px;
+}
+
+.advent-calendar h1 {
+    display: none;
+}

@@ -18,7 +18,7 @@ class LandingPage extends Component {
             <h1>Advent Calendar</h1>
             <p>Millions of calendar. No credit card required.</p>
             <Link to="/calendar">
-            <Button className='button'>I create</Button>
+            <Button className='button'>Create my calendar</Button>
             </Link>
             </div>
         </div> 

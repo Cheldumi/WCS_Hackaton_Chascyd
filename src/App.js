@@ -3,13 +3,29 @@ import './App.css';
 import CustomizingPage from './components/CustomizingPage';
 import { BrowserRouter as Router, Switch,Route, Link} from "react-router-dom";
 import LandingPage from './components/LandingPage';
+import Preview from './components/Preview';
+import AdventCalendar from './components/AdventCalendar';
+import SingleGift from './components/SingleGift';
+import Snow from 'react-snow-effect';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 class App extends Component {
+  // constructor() {
+  //   this.state = {
+  //     single: {
+  //     }
+  //   }
+
+
+   
 
   render () {
     return (
       <Router>
-        <div>
+        <div className='app'>
+          <Snow />
           <Switch>
             <Route
             exact path="/"
@@ -19,6 +35,15 @@ class App extends Component {
             path="/calendar"
             component={CustomizingPage}
             />
+            <Route
+            path="/preview"
+            component={Preview}
+            />
+            <Route
+            path="/adventcalendar"
+            component={AdventCalendar}
+            />
+    
           </Switch>
         </div>
       </Router>

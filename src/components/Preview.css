@@ -1,4 +1,4 @@
-.app {
+.preview {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('https://s1.1zoom.me/big0/128/401726-svetik.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -11,4 +11,17 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.preview h1 {
+    color:white;
+}
+
+.no-preview h1 {
+    display: none;
+}
+
+.no-preview {
+    width: 45%;
+    padding: 10px;
 }
