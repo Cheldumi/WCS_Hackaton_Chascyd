@@ -28,7 +28,7 @@ class CustomizingPage extends Component {
             </div>
             <div>
             <Link to="/preview">
-              <Button className='button'>Share my calendar</Button>
+              <Button className='button'>Confirm and Share</Button>
             </Link>
             </div>
         </div>
