@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './DateBox.css';
 
 // const whichDate = () => {
@@ -14,21 +14,53 @@ import './DateBox.css';
 
 
 
-const DateBox = (props) => {
 
-    console.log(props.case)
+class DateBox extends Component {
 
-   return (
-    <div
-        className= {`${props.case.isOpen ? "opened" : ""} ${props.case.canBeOpened && !props.case.isOpen ? "openable" : "locked"}`} 
+    constructor(props) {
+        super(props);
+        this.state={
+            selectOptionMedia: ''//this.props.media[0].file_name
+        }
+    }
 
-        onClick={() => props.handleClick(props.index)}>
-        <img src={props.case.data} alt="uploaded data"/>
-        <p>{props.case.date}</p>
-        {props.case.isOpen}
-        {props.case.canBeOpened}
-    </div>
-   ) 
+      handleChange = (event) => {
+        this.setState({selectOptionMedia: event.target.value});
+      }
+    
+      handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.mediaChoice(this.state.selectOptionMedia, this.props.index);
+      }
+
+    //onSubmit={props.mediaChoice}
+
+    render(){
+        return (
+            <div
+                className= {`${this.props.case.isOpen ? "opened" : ""} ${this.props.case.canBeOpened && !this.props.case.isOpen ? "openable" : "locked"}`} 
+        
+                onClick={() => this.props.handleClick(this.props.index)}
+            >
+                <img src={this.props.case.data} alt="uploaded data"/>
+                {this.props.case.date}
+                {this.props.case.isOpen}
+                {this.props.case.canBeOpened}
+                
+                <form onSubmit={this.handleSubmit} >
+                    <select name='media' value={this.state.selectOptionMedia} onChange={this.handleChange} >
+                        {this.props.media.map((contenu, index) => { 
+                            return(
+                            <option value={index}>{contenu.file_name}</option>
+                            )
+                        })}
+                    </select>
+                    <input type="submit" value="ok" />
+                </form>
+            </div>
+           );
+    }
+   
 }
 
 export default DateBox;

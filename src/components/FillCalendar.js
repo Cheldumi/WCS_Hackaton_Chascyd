@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import './FillCalendar.css';
 import DateBox from './DateBox';
+import axios from 'axios';
 
 class FillCalendar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      case: this.buildDateBox()
+      case: this.buildDateBox(),
+      media: []
     }
   }
+
   buildDateBox = () => {
     let boxes =  [];
     for (let i = 1; i < 25; i++) {
@@ -36,10 +39,8 @@ class FillCalendar extends Component {
   }
 
   isClicked = (index) => {
-    console.log("I am clicked")
     if(this.state.case[index].canBeOpened && !this.state.case[index].isOpen) {
       let newCase = this.state.case;
-      console.log("Je suis newCase", newCase)
       newCase[index].isOpen = true;
       this.setState({
         case: newCase
@@ -53,17 +54,68 @@ class FillCalendar extends Component {
     return dateFormat;
   }
 
+  handleSubmitMedia = (indexMedia, index) => {
+    let newCase = this.state.case;
+      newCase[index].data = this.state.media[indexMedia].path;
+      console.log(this.state.media[indexMedia].path);
+      this.setState({
+        case: newCase
+      });
+  }
+
+  handleCalendar = () => {
+    /*axios.post('http://localhost:5000/calendar', {
+            method: 'POST',
+            body: this.state.case
+        })*/
+    axios
+      .post('http://localhost:5000/calendar', {
+          method: 'POST',
+          mode: 'no-cors',
+          data: this.state.case
+        })
+      .then(res => {
+        console.log("Res ?", res);
+    })
+  }
+
+  fetchVideos = () => {
+    axios
+        .get('http://localhost:5000/media')
+        .then(res => {
+            console.log('Res ?', res.data)
+            this.setState({
+                media: res.data
+            })
+        })
+  }
+
+  componentDidMount(){
+      this.fetchVideos();
+  }
+
+  //mediaChoice={this.handleSubmitMedia}
+
   render () {
     return (
       <div className="fillCalendarDiv">
         <h1>2 - Choose your date and <br />upload your media</h1>
+        <button onClick={this.fetchVideos}>FILL MEDIA</button>
         <div className="allBoxes">
           {this.state.case.map((contenu, index) => { 
             return (
-              <DateBox handleClick={this.isClicked} case={contenu} index={index}/>
+              <DateBox handleClick={this.isClicked} 
+                       case={contenu} 
+                       index={index}
+                       mediaChoice={this.handleSubmitMedia}
+                       media={this.state.media}
+                       />
             )
           })}
         </div>
+
+        <button onClick={this.handleCalendar}>Valider le calendrier</button>
+
       </div>
     );
   }
