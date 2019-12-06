@@ -41,11 +41,11 @@ class DateBox extends Component {
         return (
             <div
                 className= {`${this.props.case.isOpen ? "opened" : ""} ${this.props.case.canBeOpened && !this.props.case.isOpen ? "openable" : "locked"}`} 
-        
+                // className="opened openable"
                 onClick={() => this.props.handleClick(this.props.index)}
             >
                 <img src={this.props.case.data} alt="uploaded data"/>
-                {this.props.case.date}
+                <p>{this.props.case.date}</p>
                 {this.props.case.isOpen}
                 {this.props.case.canBeOpened}
                 

@@ -81,7 +81,7 @@ class DropZone extends Component {
                 <img
                     alt="upload"
                     className="Icon"
-                    src="baseline-cloud_upload-24px.svg"
+                    src="https://cdn3.iconfinder.com/data/icons/file-and-folder-outline-icons-set/144/File_Add-512.png"
                 />
                 <input
                     ref={this.fileInputRef}

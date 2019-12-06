@@ -3,6 +3,7 @@ import './FillCalendar.css';
 import DateBox from './DateBox';
 import axios from 'axios';
 import Modal from "react-responsive-modal";
+// import { url } from 'inspector';
 
 class FillCalendar extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class FillCalendar extends Component {
       boxes[i] = {
         date: this.renderDate(date),
         isOpen: false,
-        data: ""/*"https://cdn.iconscout.com/icon/premium/png-256-thumb/christmas-tree-1728338-1469705.png"*/,
+        data: "https://image.flaticon.com/icons/svg/149/149092.svg",
         canBeOpened: this.checkDate(new Date, i)
       }
     }
@@ -113,21 +114,22 @@ class FillCalendar extends Component {
     return (
       <div className="fillCalendarDiv">
         <h1>2 - Choose your date and <br />upload your media</h1>
-        <button onClick={this.fetchVideos}>FILL MEDIA</button>
+        {/* <button onClick={this.fetchVideos}>FILL MEDIA</button> */}
         <div className="allBoxes">
           {this.state.case.map((contenu, index) => { 
             return (
-              <DateBox handleClick={this.isClicked} 
-                       case={contenu} 
-                       index={index}
-                       mediaChoice={this.handleSubmitMedia}
-                       media={this.state.media}
-                       />
+              <DateBox 
+              handleClick={this.isClicked} 
+              case={contenu} 
+              index={index}
+              mediaChoice={this.handleSubmitMedia}
+              media={this.state.media}
+              />
             )
           })}         
         </div>
 
-        <button onClick={this.handleCalendar}>Valider le calendrier</button>
+        {/* <button onClick={this.handleCalendar}>Valider le calendrier</button> */}
 
       </div>
     );

@@ -66,7 +66,7 @@ class ImportMedia extends Component {
           disabled={this.state.files.length < 0 || this.state.uploading}
           onClick={this.uploadFiles}
         >
-          Upload
+          Send your files
         </button>
       );
     }
