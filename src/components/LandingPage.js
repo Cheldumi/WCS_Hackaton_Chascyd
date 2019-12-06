@@ -16,7 +16,7 @@ class LandingPage extends Component {
             <div className="bloc-hp">
             <Snow />
             <h1>Advent Calendar</h1>
-            <p>Millions of calendar. No credit card required.</p>
+            <p>Millions of calendars. No credit card required.</p>
             <Link to="/calendar">
             <Button className='button'>Create my calendar</Button>
             </Link>

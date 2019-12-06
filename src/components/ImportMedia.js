@@ -66,7 +66,7 @@ class ImportMedia extends Component {
           disabled={this.state.files.length < 0 || this.state.uploading}
           onClick={this.uploadFiles}
         >
-          Upload
+          Send your files
         </button>
       );
     }
@@ -128,7 +128,7 @@ class ImportMedia extends Component {
   render() {
     return (
       <div>
-        <h1>1 - Download your media</h1>
+        <h1>1 - Upload your media</h1>
         <div className="Card">
           <div className="Upload">
             <div className="Content">
@@ -139,7 +139,6 @@ class ImportMedia extends Component {
                 />
               </div>
               <div className="Files">
-                // Add this:
                 {this.state.files.map(file => {
                   return (
                     <div key={file.name} className="Row">

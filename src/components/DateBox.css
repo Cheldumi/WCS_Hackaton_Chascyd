@@ -14,9 +14,22 @@
 }
 
 .locked p {
-    top: 40px;
+    position: relative;
+    top: 45px;
+    font-size: 24px;
 }
 
+.locked form {
+    /* display: none; */
+}
+
+.openable form {
+    /* display: none; */
+}
+
+form option{
+    width:50px;
+}
 
 .openable{
     margin: 1vh;
@@ -29,6 +42,12 @@
     border-radius: 10px;
 }
 
+
+.openable.preview{
+    background-image: url('https://cdn0.iconfinder.com/data/icons/restaurant-53/64/Cover-food-plate-restaurant-512.png');
+}
+
+
 .openable img {
     display: none;
 }
@@ -37,7 +56,9 @@
     /* background-color: blue; */
     background-image: none;
     color: transparent;
+    
 }
+
 
 .opened img {
     display: block;
@@ -47,5 +68,18 @@
 .date {
     font-size: 30px;
     position: relative;
-    top: 40px;
+    top: 10px;
+}
+
+.openable p{
+    position: relative;
+    top: 45px;
+    font-size: 24px;
+}
+
+.fill-date-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

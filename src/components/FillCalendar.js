@@ -3,6 +3,7 @@ import './FillCalendar.css';
 import DateBox from './DateBox';
 import axios from 'axios';
 import Modal from "react-responsive-modal";
+// import { url } from 'inspector';
 
 class FillCalendar extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class FillCalendar extends Component {
       boxes[i] = {
         date: this.renderDate(date),
         isOpen: false,
-        data: "https://cdn.iconscout.com/icon/premium/png-256-thumb/christmas-tree-1728338-1469705.png",/*"https://cdn.iconscout.com/icon/premium/png-256-thumb/christmas-tree-1728338-1469705.png"*/
+        data: "https://image.flaticon.com/icons/svg/149/149092.svg",
         canBeOpened: this.checkDate(new Date, i)
       }
     }
@@ -57,9 +58,9 @@ class FillCalendar extends Component {
         case: newCase
       });
     }
-    if(this.props.preview){
+    if(this.props.preview && this.state.case[index].canBeOpened){
       console.log('POPUP');
-      this.props.getPopup(this.state.case[index].data);
+      this.props.getPopup("https://preview.redd.it/ip2jb222aag31.jpg?width=640&crop=smart&auto=webp&s=44ee71612baa85d8541ed3f6246fd5af0c1ced28");
     }
   }
 

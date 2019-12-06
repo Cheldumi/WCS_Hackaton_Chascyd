@@ -38,7 +38,7 @@ class App extends Component {
             />
             <Route
             path="/preview"
-            component={Preview}
+            component={ValidateCalendar}
             />
             <Route
             path="/my_calendar"

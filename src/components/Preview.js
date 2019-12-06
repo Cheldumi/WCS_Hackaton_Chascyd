@@ -12,12 +12,12 @@ class Preview extends Component {
       return (
         <div className="preview">
           <Snow />
-            <h1>3- Preview my calendar</h1>
+            {/* <h1>3- Preview my calendar</h1> */}
             <div className="no-preview">
               <FillCalendar />
             </div>
             <Link to="/calendar">
-                <Button className='button'> Back to my work</Button>
+                {/* <Button className='button'> Back to my work</Button> */}
             </Link>
         </div>
 

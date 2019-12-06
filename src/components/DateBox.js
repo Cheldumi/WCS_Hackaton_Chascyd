@@ -24,6 +24,33 @@ class DateBox extends Component {
         this.state={
             selectOptionMedia: ''//this.props.media[0].file_name
         }
+
+        this.media = [
+            {
+                file_name: '1-dishTurkey.jpg'
+            },
+            {
+                file_name: '2- Pinot noir.mp4'
+            },
+            {
+                file_name: '3-dessertFreshSouthernPeachCobbler.jpg'
+            },
+            {
+                file_name: '4-perfectTurkey.txt'
+            },
+            {
+                file_name: '5-dishFoieGras.jpg'
+            },
+            {
+                file_name: '6-Jurancon.mp4'
+            },
+            {
+                file_name: '7-dessertDameBlanche.jpg'
+            },
+            {
+                file_name: '8-FoieGras.txt'
+            }
+        ]
     }
 
       handleChange = (event) => {
@@ -39,30 +66,32 @@ class DateBox extends Component {
 
     render(){
         return (
-            <div
-                className= {`${this.props.case.isOpen ? "opened" : ""} ${this.props.case.canBeOpened && !this.props.case.isOpen ? "openable" : "locked"}`} 
-        
-                onClick={() => this.props.handleClick(this.props.index)}
-            >
-                <img src={this.props.case.data} alt="uploaded data"/>
-                {this.props.case.date}
-                {this.props.case.isOpen}
-                {this.props.case.canBeOpened}
-                
+            <div className="fill-date-box" >
+                <div
+
+                    className= {`${this.props.case.isOpen ? "opened" : ""} ${this.props.case.canBeOpened && !this.props.case.isOpen ? "openable" : "locked"}`} 
+                    // className="opened openable"
+                    onClick={() => this.props.handleClick(this.props.index)}
+                >
+                    <img src={this.props.case.data} alt="uploaded data"/>
+                    <p>{this.props.case.date}</p>
+                    {this.props.case.isOpen}
+                    {this.props.case.canBeOpened}
+                </div>
                 {!this.props.preview 
-                ?
-                    <form onSubmit={this.handleSubmit} >
-                        <select name='media' value={this.state.selectOptionMedia} onChange={this.handleChange} >
-                            {this.props.media.map((contenu, index) => { 
-                                return(
-                                <option value={index}>{contenu.file_name}</option>
-                                )
-                            })}
-                        </select>
-                        <input type="submit" value="ok" />
-                    </form>
-                : null
-                }
+                    ?
+                        <form>
+                            <select name='media' value={this.state.selectOptionMedia} onChange={this.handleChange} >
+                                {this.media.map((contenu, index) => { 
+                                    return(
+                                    <option value={index}>{contenu.file_name}</option>
+                                    )
+                                })}
+                            </select>
+                            <input type="submit" value="ok" />
+                        </form>
+                    : null
+                    }
             </div>
            );
     }
