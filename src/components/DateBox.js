@@ -49,16 +49,20 @@ class DateBox extends Component {
                 {this.props.case.isOpen}
                 {this.props.case.canBeOpened}
                 
-                <form onSubmit={this.handleSubmit} >
-                    <select name='media' value={this.state.selectOptionMedia} onChange={this.handleChange} >
-                        {this.props.media.map((contenu, index) => { 
-                            return(
-                            <option value={index}>{contenu.file_name}</option>
-                            )
-                        })}
-                    </select>
-                    <input type="submit" value="ok" />
-                </form>
+                {!this.props.preview 
+                ?
+                    <form onSubmit={this.handleSubmit} >
+                        <select name='media' value={this.state.selectOptionMedia} onChange={this.handleChange} >
+                            {this.props.media.map((contenu, index) => { 
+                                return(
+                                <option value={index}>{contenu.file_name}</option>
+                                )
+                            })}
+                        </select>
+                        <input type="submit" value="ok" />
+                    </form>
+                : null
+                }
             </div>
            );
     }

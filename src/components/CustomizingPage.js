@@ -27,7 +27,7 @@ class CustomizingPage extends Component {
             </Link>
             </div>
             <div>
-            <Link to="/preview">
+            <Link to="/my_calendar">
               <Button className='button'>Share my calendar</Button>
             </Link>
             </div>

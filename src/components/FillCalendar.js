@@ -30,7 +30,7 @@ class FillCalendar extends Component {
       boxes[i] = {
         date: this.renderDate(date),
         isOpen: false,
-        data: ""/*"https://cdn.iconscout.com/icon/premium/png-256-thumb/christmas-tree-1728338-1469705.png"*/,
+        data: "https://cdn.iconscout.com/icon/premium/png-256-thumb/christmas-tree-1728338-1469705.png",/*"https://cdn.iconscout.com/icon/premium/png-256-thumb/christmas-tree-1728338-1469705.png"*/
         canBeOpened: this.checkDate(new Date, i)
       }
     }
@@ -56,6 +56,10 @@ class FillCalendar extends Component {
       this.setState({
         case: newCase
       });
+    }
+    if(this.props.preview){
+      console.log('POPUP');
+      this.props.getPopup(this.state.case[index].data);
     }
   }
 
@@ -113,7 +117,6 @@ class FillCalendar extends Component {
     return (
       <div className="fillCalendarDiv">
         <h1>2 - Choose your date and <br />upload your media</h1>
-        <button onClick={this.fetchVideos}>FILL MEDIA</button>
         <div className="allBoxes">
           {this.state.case.map((contenu, index) => { 
             return (
@@ -122,13 +125,11 @@ class FillCalendar extends Component {
                        index={index}
                        mediaChoice={this.handleSubmitMedia}
                        media={this.state.media}
+                       preview={this.props.preview}
                        />
             )
           })}         
         </div>
-
-        <button onClick={this.handleCalendar}>Valider le calendrier</button>
-
       </div>
     );
   }

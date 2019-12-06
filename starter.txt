@@ -3,10 +3,13 @@ back-end:
 - npm install express --save
 - npm install cors --save
 - npm install formidable --save
+- npm install --save body-parser
 
 front-end:
 - npm install --save
 - npm install --save muicss
 - npm install react-snow-effect --save
+- npm install axios --save
+- npm install react-bootstrap --save
 
 

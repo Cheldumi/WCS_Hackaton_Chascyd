@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch,Route, Link} from "react-router-dom";
 import LandingPage from './components/LandingPage';
 import Preview from './components/Preview';
 import AdventCalendar from './components/AdventCalendar';
+import ValidateCalendar from './components/ValidateCalendar';
 import SingleGift from './components/SingleGift';
 import Snow from 'react-snow-effect';
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -40,8 +41,8 @@ class App extends Component {
             component={Preview}
             />
             <Route
-            path="/adventcalendar"
-            component={AdventCalendar}
+            path="/my_calendar"
+            component={ValidateCalendar}
             />
     
           </Switch>
