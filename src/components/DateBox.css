@@ -1,15 +1,51 @@
 .locked{
-    border: solid black 1px;
     margin: 1vh;
-    background-color: red;
+    /* background-color:#E73C3E; */
+    background-image: url('https://image.flaticon.com/icons/svg/186/186524.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 110px;
+    width: 110px;
+    border-radius: 10px;
 }
+
+.locked img {
+    display: none;
+}
+
+.locked p {
+    top: 40px;
+}
+
 
 .openable{
     margin: 1vh;
-    border: solid black 1px;
-    background-color: green;
+    /* background-color:#727563; */
+    background-image: url('https://cdn0.iconfinder.com/data/icons/restaurant-53/64/Cover-food-plate-restaurant-512.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 110px;
+    width: 110px;
+    border-radius: 10px;
+}
+
+.openable img {
+    display: none;
 }
 
 .opened{
-    background-color: blue;
+    /* background-color: blue; */
+    background-image: none;
+    color: transparent;
+}
+
+.opened img {
+    display: block;
+}
+
+
+.date {
+    font-size: 30px;
+    position: relative;
+    top: 40px;
 }

@@ -1,5 +1,5 @@
 .customizing-page {
-    background-image: url('https://images5.alphacoders.com/666/thumb-1920-666586.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('https://s1.1zoom.me/big0/128/401726-svetik.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     top: 0;
@@ -10,13 +10,15 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .fill-calendar {
     background-color: white;
     opacity: 0.8;
-    height: 50%;
-    width: 30%;
+    height: 70%;
+    width: 45%;
+    overflow: scroll;
 }
 
 .fill-calendar h1 {
@@ -32,29 +34,11 @@
 .import-media {
     background-color: white;
     opacity: 0.8;
-    height: 50%;
-    width: 30%;
+    height: 70%;
+    width: 45%;
 }
 
 .import-media h1 {
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 24px;
-    font-family: inherit;
-    text-align: center;
-    vertical-align: middle;
-    line-height: normal;
-}
-
-.previsualisation {
-    background-color: white;
-    opacity: 0.8;
-    height: 50%;
-    width: 30%;
-
-}
-
-.previsualisation h1 {
     font-weight: 500;
     text-transform: uppercase;
     font-size: 24px;

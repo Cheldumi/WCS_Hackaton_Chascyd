@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import FillCalendar from './FillCalendar.js';
-import Previsualisation from './Previsualisation';
+import Previsualisation from './Preview';
 import ImportMedia from './ImportMedia';
 import './LandingPage.css';
 import './CustomizingPage.css';
 import Snow from 'react-snow-effect';
-import CalendarsList from './CalendarsList';
-import CalendarForm from './CalendarForm';
+import Button from 'muicss/lib/react/button';
+import { BrowserRouter as Router, Switch,Route, Link} from "react-router-dom";
 
 
 class CustomizingPage extends Component {
@@ -15,15 +15,22 @@ class CustomizingPage extends Component {
       return (
         <div className='customizing-page'>
           <Snow/>
-          <div className='import-media'>
-            <ImportMedia />
+              <div className='import-media'>
+                <ImportMedia />
+                </div>
+              <div className='fill-calendar'>
+                <FillCalendar />
+              </div>
+            <div>
+            <Link to="/preview">
+              <Button className='button'>Preview my calendar</Button>
+            </Link>
             </div>
-          <div className='fill-calendar'>
-            <FillCalendar />
-          </div>
-          <div className='previsualisation'>
-            <Previsualisation />
-          </div>
+            <div>
+            <Link to="/preview">
+              <Button className='button'>Share my calendar</Button>
+            </Link>
+            </div>
         </div>
       );
     }

@@ -2,15 +2,26 @@ import React, { Component } from 'react';
 import './FillCalendar.css';
 import DateBox from './DateBox';
 import axios from 'axios';
+import Modal from "react-responsive-modal";
 
 class FillCalendar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       case: this.buildDateBox(),
-      media: []
+      media: [],
+      open: false
     }
   }
+
+  onOpenModal = () => {
+    this.setState({open : true});
+  };
+
+  OnCloseModal = () => {
+    this.setState({open: false});
+  };
+
 
   buildDateBox = () => {
     let boxes =  [];
@@ -34,7 +45,7 @@ class FillCalendar extends Component {
     if(today2 <= comparedDate - 1) {
       return false;
     } else {
-      return true
+      return true;
     }
   }
 
@@ -49,7 +60,7 @@ class FillCalendar extends Component {
   }
 
   renderDate = (date) => {
-    let settings = { weekday: 'long', day: 'numeric' };
+    let settings = { day: 'numeric' };
     let dateFormat = date.toLocaleDateString('fr-BE', settings)
     return dateFormat;
   }
@@ -97,6 +108,8 @@ class FillCalendar extends Component {
   //mediaChoice={this.handleSubmitMedia}
 
   render () {
+
+
     return (
       <div className="fillCalendarDiv">
         <h1>2 - Choose your date and <br />upload your media</h1>
@@ -111,7 +124,7 @@ class FillCalendar extends Component {
                        media={this.state.media}
                        />
             )
-          })}
+          })}         
         </div>
 
         <button onClick={this.handleCalendar}>Valider le calendrier</button>
